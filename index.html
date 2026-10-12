@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#101510">
+<title>أحمد وائل بدر | LiftLog</title>
+<style>
+:root{--bg:#101510;--panel:#1b241d;--panel2:#202b23;--line:#344036;--green:#86efac;--text:#f5f7f5;--muted:#a7b5a8;--red:#fca5a5}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Tahoma,Arial,sans-serif}button,input,select,textarea{font:inherit}button{cursor:pointer;border:0;border-radius:12px;padding:12px 14px;background:#294a31;color:white;font-weight:700}button.secondary{background:#202b23;border:1px solid var(--line)}button.danger{background:#422a27}.app{max-width:900px;margin:auto;padding:18px 14px 40px}.top{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:18px}.brand{display:flex;align-items:center;gap:12px}.logo{background:#244a31;border-radius:14px;padding:12px;font-size:24px}.brand h1{font-size:24px;margin:0}.muted{color:var(--muted)}.small{font-size:12px;color:var(--muted)}.badge{border:1px solid #41654a;color:var(--green);padding:5px 9px;border-radius:99px;font-size:12px}.hero,.card{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:16px;margin-bottom:14px}.hero{background:linear-gradient(135deg,#1a291d,#1b241d)}h2{font-size:19px;margin:0 0 12px}h3{font-size:16px;margin:0 0 8px}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:15px}.stat{background:#202b23;border-radius:12px;padding:12px}.stat strong{display:block;font-size:23px;color:var(--green);margin-top:4px}.tabs{display:flex;gap:8px;margin:14px 0}.tabs button{flex:1}.tabs button.active{background:var(--green);color:#102014}.muscles{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.muscle{background:#1b241d;border:1px solid var(--line);text-align:right;padding:13px;border-radius:14px;color:white}.muscle.active{border-color:#69c781;background:#294a31}.muscle .emoji{font-size:22px;display:block;margin-bottom:8px}.muscle small{display:block;color:var(--muted);margin-top:3px}.exercise-list{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 15px}.exercise{background:#202b23;border:1px solid var(--line);padding:9px 11px;border-radius:10px;color:#fff}.exercise.active{border-color:#69c781;background:#294a31}.field{display:flex;flex-direction:column;gap:6px;margin:10px 0}.field label{font-size:13px;color:var(--muted)}input,select,textarea{width:100%;min-width:0;background:#111812;color:white;border:1px solid var(--line);border-radius:10px;padding:11px;outline:none}input:focus,select:focus,textarea:focus{border-color:#69c781}.setrow{display:grid;grid-template-columns:42px 1fr 1fr 40px;gap:8px;align-items:center;margin:8px 0}.setnum{background:#29332b;border-radius:10px;padding:12px;text-align:center}.sethead{display:grid;grid-template-columns:42px 1fr 1fr 40px;gap:8px;color:var(--muted);font-size:12px}.setrow button{padding:9px;background:#422a27}.row{display:flex;align-items:center;justify-content:space-between;gap:10px}.analysis{background:#26362a;border-radius:12px;padding:13px;margin:12px 0}.green{color:var(--green)}.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}.actions button{flex:1}.history-item{background:#1b241d;border:1px solid var(--line);border-radius:14px;padding:14px;margin:10px 0}.history-item p{margin:7px 0}.chat{display:flex;flex-direction:column;gap:10px}.bubble{padding:12px 14px;border-radius:14px;line-height:1.7;white-space:pre-wrap}.bubble.ai{background:#202b23;border:1px solid var(--line)}.bubble.user{background:#294a31;align-self:flex-start;max-width:90%}.chat-form{display:flex;gap:8px;margin-top:12px}.chat-form input{flex:1}.notice{font-size:13px;color:var(--green);margin-top:10px;min-height:18px}.hidden{display:none!important}.footer{text-align:center;color:var(--muted);font-size:12px;margin:20px 0}.empty{text-align:center;padding:25px;color:var(--muted)}@media(min-width:650px){.muscles{grid-template-columns:repeat(4,minmax(0,1fr))}.layout{display:grid;grid-template-columns:1fr 1fr;gap:14px}.layout .card{margin-bottom:0}}@media(max-width:390px){.app{padding:12px 9px}.setrow,.sethead{grid-template-columns:32px 1fr 1fr 34px;gap:5px}.setrow input{padding:9px 5px}.stat strong{font-size:20px}}
+</style>
+</head>
+<body>
+<div class="app">
+<header class="top">
+ <div class="brand"><div class="logo">🏋️</div><div><h1>أحمد وائل بدر</h1><div class="small">LiftLog • مدربك الشخصي</div></div></div>
+ <span class="badge">نسخة تجريبية</span>
+</header>
+<section class="hero">
+ <div class="muted">كل تمرينة بتقرّبك لهدفك</div><h2 style="font-size:23px;margin-top:5px">جاهز تكسر رقمك؟ 🔥</h2>
+ <div class="stats">
+  <div class="stat"><span class="small">تمارين محفوظة</span><strong id="statWorkouts">0</strong></div>
+  <div class="stat"><span class="small">المجموعات</span><strong id="statSets">0</strong></div>
+  <div class="stat"><span class="small">عضلات مسجلة</span><strong id="statMuscles">0</strong></div>
+ </div>
+</section>
+<div class="tabs">
+ <button id="tabWorkout" class="active" onclick="showTab('workout')">💪 التمرين</button>
+ <button id="tabHistory" class="secondary" onclick="showTab('history')">📒 السجل</button>
+ <button id="tabCoach" class="secondary" onclick="showTab('coach')">🤖 المدرب AI</button>
+</div>
+<section id="workoutView">
+ <div class="card">
+  <h2>اختار العضلة</h2><div class="muscles" id="muscleGrid"></div>
+  <h2 style="margin-top:20px">تمارين <span id="muscleTitle">الباي</span></h2><div class="exercise-list" id="exerciseList"></div>
+ </div>
+ <div class="card">
+  <div class="row"><div><div class="small" id="exerciseMuscle">باي / Biceps</div><h2 id="exerciseTitle" style="margin-top:4px">Dumbbell Curl</h2></div><span>📈</span></div>
+  <div id="previousBox" class="analysis"></div>
+  <h3>سجّل مجموعاتك</h3>
+  <div class="sethead"><span>رقم</span><span>الوزن (كجم)</span><span>التكرارات</span><span></span></div>
+  <div id="sets"></div>
+  <div class="actions"><button class="secondary" onclick="addSet()">＋ إضافة مجموعة</button><button onclick="saveWorkout()">💾 حفظ التمرين</button></div>
+  <div id="saveNotice" class="notice"></div>
+  <div class="row" style="margin-top:14px"><span class="muted">حجم التمرين الحالي</span><strong class="green" id="volume">0 كجم × تكرار</strong></div>
+  <div id="comparison" class="analysis hidden"></div>
+ </div>
+</section>
+<section id="historyView" class="card hidden"><div class="row"><h2>سجل التمارين</h2><button class="secondary" onclick="exportData()">تصدير البيانات</button></div><div id="historyList"></div><button class="danger" onclick="clearHistory()">مسح السجل كله</button></section>
+<section id="coachView" class="card hidden">
+ <h2>🤖 LiftLog AI Coach</h2>
+ <p class="muted">اسألني في أي موضوع. لما تشغّل الخادم وتضيف مفتاح API، هتقدر تتكلم مع المدرب الذكي بالعربي والمصري، مع إمكانية الاستفادة من سجل تمرينك.</p>
+ <div id="chat" class="chat"><div class="bubble ai">أهلاً يا بطل! اختار تمرينك وسجّل أوزانك، وأنا أقدر أساعدك تفهم تقدمك بناءً على السجل الموجود في التطبيق. اسألني مثلًا: أزود الوزن ولا التكرارات؟</div></div>
+ <form class="chat-form" onsubmit="askCoach(event)"><input id="chatInput" placeholder="اكتب سؤالك بالمصري..." autocomplete="off"><button>إرسال</button></form>
+ <div class="small" style="margin-top:9px">الاتصال يتم عبر خادم آمن؛ مفتاح API لا يُحفظ داخل الصفحة. يلزم إعداد OPENAI_API_KEY على الخادم.</div>
+</section>
+<div class="footer">أحمد وائل بدر • LiftLog • البيانات محفوظة محليًا على نفس المتصفح والجهاز</div>
+</div>
+<script>
+const muscles=[
+{id:'باي',en:'Biceps',emoji:'💪',ex:['Dumbbell Curl','Barbell Curl','Hammer Curl','Preacher Curl','Cable Curl']},
+{id:'تراي',en:'Triceps',emoji:'🏋️',ex:['Rope Pushdown','Overhead Extension','Skull Crushers','Close-Grip Press']},
+{id:'صدر',en:'Chest',emoji:'🔥',ex:['Bench Press','Incline Dumbbell Press','Chest Fly','Cable Crossover','Chest Press']},
+{id:'ظهر',en:'Back',emoji:'⚡',ex:['Lat Pulldown','Seated Cable Row','Barbell Row','One-Arm Dumbbell Row','Pull-Ups']},
+{id:'كتف',en:'Shoulders',emoji:'🎯',ex:['Shoulder Press','Lateral Raises','Rear Delt Fly','Face Pull']},
+{id:'رجل',en:'Legs',emoji:'🦵',ex:['Squat','Leg Press','Leg Extension','Leg Curl','Calf Raises']},
+{id:'بطن',en:'Abs',emoji:'🏆',ex:['Crunches','Leg Raises','Cable Crunch','Plank']},
+{id:'ساعد',en:'Forearms',emoji:'✊',ex:['Wrist Curl','Reverse Wrist Curl',"Farmer's Walk"]}
+];
+let selectedMuscle='باي',selectedExercise='Dumbbell Curl',sets=[{weight:'',reps:''},{weight:'',reps:''},{weight:'',reps:''}],history=[];
+try{history=JSON.parse(localStorage.getItem('liftlog_history')||'[]')}catch(e){history=[]}
+const $=id=>document.getElementById(id);
+function persist(){try{localStorage.setItem('liftlog_history',JSON.stringify(history))}catch(e){}}
+function renderMuscles(){$('muscleGrid').innerHTML=muscles.map(m=>`<button class="muscle ${m.id===selectedMuscle?'active':''}" onclick="chooseMuscle('${m.id}')"><span class="emoji">${m.emoji}</span><strong>${m.id}</strong><small>${m.en}</small></button>`).join('')}
+function renderExercises(){$('muscleTitle').textContent=selectedMuscle;$('exerciseMuscle').textContent=selectedMuscle+' / '+muscles.find(m=>m.id===selectedMuscle).en;$('exerciseList').innerHTML=muscles.find(m=>m.id===selectedMuscle).ex.map(e=>`<button class="exercise ${e===selectedExercise?'active':''}" onclick="chooseExercise(${JSON.stringify(e)})">${e}</button>`).join('');$('exerciseTitle').textContent=selectedExercise;renderPrevious();renderSets()}
+function chooseMuscle(m){selectedMuscle=m;selectedExercise=muscles.find(x=>x.id===m).ex[0];sets=[{weight:'',reps:''},{weight:'',reps:''},{weight:'',reps:''}];$('saveNotice').textContent='';renderMuscles();renderExercises()}
+function chooseExercise(e){selectedExercise=e;sets=[{weight:'',reps:''},{weight:'',reps:''},{weight:'',reps:''}];$('saveNotice').textContent='';renderExercises()}
+function prevRecord(){return history.find(h=>h.muscle===selectedMuscle&&h.exercise===selectedExercise)}
+function volume(arr){return arr.reduce((n,s)=>n+(Number(s.weight)||0)*(Number(s.reps)||0),0)}
+function renderPrevious(){let p=prevRecord();$('previousBox').innerHTML=p?`<strong class="green">📒 آخر سجل للتمرين</strong><div style="margin-top:7px">${p.date}</div>${p.sets.map((s,i)=>`<div class="small" style="margin-top:5px">مجموعة ${i+1}: ${s.weight} كجم × ${s.reps}</div>`).join('')}`:'<strong>لسه مفيش سجل سابق للتمرين ده.</strong><div class="small" style="margin-top:6px">احفظ أول تمرينة عشان تقدر تقارن أدائك بعد كده.</div>';renderComparison()}
+function renderSets(){$('sets').innerHTML=sets.map((s,i)=>`<div class="setrow"><div class="setnum">${i+1}</div><input type="number" min="0" step="0.5" placeholder="مثلاً 10" aria-label="وزن المجموعة ${i+1}" value="${s.weight}" oninput="editSet(${i},'weight',this.value)"><input type="number" min="0" step="1" placeholder="مثلاً 12" aria-label="تكرارات المجموعة ${i+1}" value="${s.reps}" oninput="editSet(${i},'reps',this.value)"><button title="حذف المجموعة" onclick="removeSet(${i})">×</button></div>`).join('');$('volume').textContent=volume(sets)+' كجم × تكرار';renderComparison()}
+function editSet(i,k,v){sets[i][k]=v;$('volume').textContent=volume(sets)+' كجم × تكرار';renderComparison()}
+function addSet(){sets.push({weight:'',reps:''});renderSets()}
+function removeSet(i){if(sets.length===1){sets=[{weight:'',reps:''}]}else sets.splice(i,1);renderSets()}
+function renderComparison(){let p=prevRecord(),v=volume(sets),box=$('comparison');if(!p){box.classList.add('hidden');return}let diff=v-volume(p.sets);box.classList.remove('hidden');box.innerHTML=`<strong>${diff>0?'📈 حجم التمرين زاد':diff<0?'↘ حجم التمرين قل':'↔ نفس حجم التمرين السابق'}</strong><div class="small" style="margin-top:6px">الفرق عن آخر سجل: ${diff>0?'+':''}${diff} كجم × تكرار. المقارنة للحجم الكلي وليست وحدها حكمًا على جودة الأداء.</div>`}
+function saveWorkout(){let valid=sets.filter(s=>Number(s.weight)>0&&Number(s.reps)>0).map(s=>({weight:Number(s.weight),reps:Number(s.reps)}));if(!valid.length){$('saveNotice').textContent='دخل وزن وتكرارات صحيحين لمجموعة واحدة على الأقل.';return}let entry={muscle:selectedMuscle,exercise:selectedExercise,date:new Date().toLocaleString('ar-EG'),sets:valid};history.unshift(entry);persist();$('saveNotice').textContent='اتحفظ التمرين بنجاح على الجهاز!';renderPrevious();renderStats();renderHistory()}
+function renderStats(){$('statWorkouts').textContent=history.length;$('statSets').textContent=history.reduce((n,h)=>n+h.sets.length,0);$('statMuscles').textContent=new Set(history.map(h=>h.muscle)).size}
+function showTab(tab){['workout','history','coach'].forEach(t=>{$(t+'View').classList.toggle('hidden',t!==tab);$('tab'+t[0].toUpperCase()+t.slice(1)).classList.toggle('active',t===tab);$('tab'+t[0].toUpperCase()+t.slice(1)).classList.toggle('secondary',t!==tab)});if(tab==='history')renderHistory()}
+function renderHistory(){let list=$('historyList');if(!history.length){list.innerHTML='<div class="empty">لسه مفيش تمارين محفوظة. ابدأ سجّل أول تمرينة 💪</div>';return}list.innerHTML=history.map((h,i)=>`<div class="history-item"><div class="row"><div><h3>${escapeHtml(h.exercise)}</h3><div class="small">${escapeHtml(h.muscle)} • ${escapeHtml(h.date)}</div></div><strong class="green">${volume(h.sets)}</strong></div>${h.sets.map((s,j)=>`<p class="small">المجموعة ${j+1}: ${s.weight} كجم × ${s.reps}</p>`).join('')}<div class="actions"><button class="secondary" onclick="loadEntry(${i})">تحميل للمقارنة</button><button class="danger" onclick="deleteEntry(${i})">حذف</button></div></div>`).join('')}
+function loadEntry(i){let h=history[i];selectedMuscle=h.muscle;selectedExercise=h.exercise;sets=h.sets.map(s=>({weight:String(s.weight),reps:String(s.reps)}));renderMuscles();renderExercises();showTab('workout')}
+function deleteEntry(i){history.splice(i,1);persist();renderHistory();renderStats();renderPrevious()}
+function clearHistory(){if(confirm('متأكد إنك عايز تمسح كل السجل المحفوظ؟')){history=[];persist();renderHistory();renderStats();renderPrevious();$('saveNotice').textContent='تم مسح السجل.'}}
+function exportData(){let blob=new Blob([JSON.stringify(history,null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='liftlog-history.json';a.click();URL.revokeObjectURL(url)}
+function escapeHtml(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+async function askCoach(e){
+ e.preventDefault();
+ let input=$('chatInput'),q=input.value.trim();
+ if(!q)return;
+ let chat=$('chat'),u=document.createElement('div');
+ u.className='bubble user';u.textContent=q;chat.appendChild(u);
+ input.value='';
+ let a=document.createElement('div');a.className='bubble ai';a.textContent='ثواني يا أحمد، بفكر في الرد...';chat.appendChild(a);
+ const workoutContext={
+  selectedMuscle, selectedExercise,
+  currentSets:sets.filter(s=>Number(s.weight)>0&&Number(s.reps)>0).map(s=>({weight:Number(s.weight),reps:Number(s.reps)})),
+  previousRecord:prevRecord()||null,
+  recentHistory:history.slice(0,20)
+ };
+ try{
+  const response=await fetch('/api/chat',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({message:q,workoutContext})});
+  const data=await response.json();
+  if(!response.ok)throw new Error(data.error||'تعذر الاتصال بالمدرب.');
+  a.textContent=data.reply||'معلش، مفيش رد متاح دلوقتي.';
+ }catch(err){
+  a.textContent='مش قادر أوصل للمدرب الذكي دلوقتي. تأكد إنك شغّلت الخادم وضفت OPENAI_API_KEY في ملف البيئة، وبعدها جرّب تاني. التفاصيل: '+err.message;
+ }
+ chat.scrollTop=chat.scrollHeight;
+}
+function askCoach(e){e.preventDefault();let input=$('chatInput'),q=input.value.trim();if(!q)return;let chat=$('chat'),u=document.createElement('div');u.className='bubble user';u.textContent=q;chat.appendChild(u);let a=document.createElement('div');a.className='bubble ai';a.textContent=coachReply(q);chat.appendChild(a);input.value='';chat.scrollTop=chat.scrollHeight}
+renderMuscles();renderExercises();renderStats();renderHistory();
+</script>
+</body>
+</html>
